@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+  <head>
+    <meta charset="UTF-8">
+    <title>Report3</title>
+    <link rel="stylesheet" href="report3.css">
+    <script src="./report3.js"defer></script>
+
+  </head>
+  <body>
+    <div id="contents">
+      <div id="panel">
+        <div>
+          <p>2分法</p>
+          <button type="button" id="t1" class="normal" onclick="t1()">手順</button>
+          <button type="button" id="h1" class="normal" onclick="h1()">計算範囲</button>
+        </div>
+        <div>
+          <p>ニュートン法</p>
+          <button type="button" id="t2" class="normal" onclick="t2()">手順</button>
+        </div>
+      </div>
+      <div id="main">
+        <div id="area1" class="area">
+          <p>　2分法　グラフ</p>
+          <canvas id="myCanvas1" width="460" height="460"></canvas>
+          <script>
+            var element = document.querySelector( '#myCanvas1' );
+            var context = element.getContext( '2d' );
+            context.beginPath();
+            //X
+            context.moveTo( 30, 300 );
+            context.lineTo( 400, 300 );
+            context.font = "25px Arial";
+            context.fillText("X",410, 300);
+            //Y
+            context.moveTo( 70, 350 );
+            context.lineTo( 70, 30 );
+            context.font = "25px Arial";
+            context.fillText("Y",50, 25);
+            //y=f(x)
+            context.moveTo( 100, 350 );
+            context.lineTo( 400, 180 );
+            context.font = "25px Arial";
+            context.fillText("y=f(x)",370, 160);
+            //0
+            context.font = "25px Arial";
+            context.fillText("0",50, 330);
+
+            context.lineWidth = 5;
+            context.stroke();
+
+          </script>
+        </div>
+
+        <div id="area2" class="area">
+          <p>　ニュートン法　グラフ</p>
+          <canvas id="myCanvas2" width="460" height="460"></canvas>
+          <script>
+            var element = document.querySelector( '#myCanvas2' );
+            var context = element.getContext( '2d' );
+            context.beginPath();
+            //X
+            context.moveTo( 30, 300 );
+            context.lineTo( 400, 300 );
+            context.font = "25px Arial";
+            context.fillText("X",410, 300);
+            //Y
+            context.moveTo( 70, 350 );
+            context.lineTo( 70, 30 );
+            context.font = "25px Arial";
+            context.fillText("Y",50, 25);
+            //0
+            context.font = "25px Arial";
+            context.fillText("0",50, 330);
+            //曲線
+            context.moveTo( 100, 350 );
+            context.quadraticCurveTo( 220, 350, 320, 0);
+
+            context.lineWidth = 5;
+            context.stroke();
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
